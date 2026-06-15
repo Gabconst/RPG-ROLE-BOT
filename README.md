@@ -79,4 +79,4 @@ O prefixo padrão é `-gab-`.
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para detalhes.
 
 ---
-Desenvolvido com ❤️ por [Gabconst](https://github.com/Gabconst)
+Desenvolvido com por [Gabconst](https://github.com/Gabconst)
