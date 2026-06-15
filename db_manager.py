@@ -1,7 +1,11 @@
 import sqlite3
+import os
+
+# Define o caminho do banco de dados relativo a este arquivo
+DB_PATH = os.path.join(os.path.dirname(__file__), 'rpg_bot.db')
 
 def init_db():
-    conn = sqlite3.connect('gab_bot/rpg_bot.db')
+    conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS characters (
@@ -21,7 +25,7 @@ def init_db():
     conn.close()
 
 def get_character(user_id):
-    conn = sqlite3.connect('gab_bot/rpg_bot.db')
+    conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
     cursor.execute('SELECT * FROM characters WHERE user_id = ?', (user_id,))
     char = cursor.fetchone()
@@ -29,7 +33,7 @@ def get_character(user_id):
     return char
 
 def update_character(user_id, field, value):
-    conn = sqlite3.connect('gab_bot/rpg_bot.db')
+    conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
     
     # Check if character exists
